@@ -1,6 +1,8 @@
+
+
 function getDogImage() {
   let dogBreed = $('#dogBreed').val().toLowerCase()
-  console.log(dogBreed)
+
   fetch(`https://dog.ceo/api/breed/${dogBreed}/images/random`)
     .then(response => response.json())
     .then(responseJson => 
@@ -9,7 +11,10 @@ function getDogImage() {
 }
 
 function displayResults(responseJson) {
-
+  let dogBreed = $('#dogBreed').val().toLowerCase()
+ if(dogBreed.length == 0) {
+  alert("Error: Form is empty. Enter breed name");
+} else {
   //replace the existing image with the new one
   $('.results-img').replaceWith(
     `<img src="${responseJson.message}" class="results-img">`
@@ -17,6 +22,7 @@ function displayResults(responseJson) {
   //display the results section
   $('.results').removeClass('hidden');
   $('.message').removeClass('hidden');
+}
 }
 
 
@@ -26,6 +32,7 @@ function watchForm() {
     getDogImage();
   });
 }
+
 
 $(function() {
   console.log('App loaded! Waiting for submit!');
