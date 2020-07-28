@@ -1,23 +1,38 @@
 * {
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     font-family: 'Roboto', sans-serif;
-  }
-  
-  .container {
+}
+
+.container {
     max-width: 600px;
     margin: 0 auto;
-  }
-  
-  .hidden {
+}
+
+.hidden {
     display: none;
-  }
+}
+
+.submit-button {
+    display: block;
+    margin-top: 10px;
+}
 
 
-  .results-img {
-      max-width: 500px;
-      display: block;
-  }  
+.dog-image-results img {
+    max-width: 500px;
+    max-height: 500px;
+    display: block;
+}
 
+.error-message {
+    color: red;
+    font-weight: bold;
+}
+
+.success-message {
+  color: green;
+  font-weight: bold;
+}
